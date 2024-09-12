@@ -12,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { IconsProviderModule } from './icons-provider.module';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
+import { NzSelectModule } from 'ng-zorro-antd/select';
 import {ThemeServiceModule} from './services/theme-service/theme.service.module';
 
 registerLocaleData(zh);
@@ -29,6 +30,7 @@ registerLocaleData(zh);
     IconsProviderModule,
     NzLayoutModule,
     NzMenuModule,
+    NzSelectModule,
     ThemeServiceModule
   ],
   providers: [

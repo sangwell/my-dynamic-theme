@@ -4,7 +4,7 @@ import {NzFormatEmitEvent} from 'ng-zorro-antd/tree';
 @Component({
   selector: 'app-welcome',
   templateUrl: './welcome.component.html',
-  styleUrls: ['./welcome.component.scss']
+  styleUrls: ['./welcome.component.less']
 })
 export class WelcomeComponent implements OnInit {
   defaultCheckedKeys = ['0-0-0'];
