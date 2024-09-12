@@ -5,6 +5,36 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.size {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin: 16px 9px;
+  cursor: pointer;
+}
+
+.dark {
+  background: #222222;
+}
+
+.light {
+  background: #ffffff;
+  border: 1px solid #000;
+}
+
+.green {
+  background: green;
+}
+
+.default {
+  span{
+    display: block;
+    position: absolute;
+    top: 0;
+    font-weight: bold;
+  }
+}
+
 .app-layout {
   height: 100vh;
 }

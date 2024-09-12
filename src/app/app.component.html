@@ -43,6 +43,12 @@
                [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
             ></span>
         </span>
+
+        <div style="float: right;">
+          <div class="size dark" (click)="toggleTheme('dark')"></div>
+          <div class="size green" (click)="toggleTheme('green')"></div>
+          <div class="size default" (click)="toggleTheme('default')"><span>默认</span></div>
+        </div>
       </div>
     </nz-header>
     <nz-content>

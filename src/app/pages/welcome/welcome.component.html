@@ -1,0 +1,41 @@
+<button nz-button nzType="primary">Primary Button</button>
+<button nz-button nzType="default">Default Button</button>
+<button nz-button nzType="dashed">Dashed Button</button>
+<button nz-button nzType="text">Text Button</button>
+<a nz-button nzType="link">Link Button</a>
+
+<br>
+<br>
+
+<nz-steps [nzCurrent]="1">
+  <nz-step nzTitle="Finished" nzDescription="This is a description."></nz-step>
+  <nz-step nzTitle="In Progress" nzSubtitle="Left 00:00:08" nzDescription="This is a description."></nz-step>
+  <nz-step nzTitle="Waiting" nzDescription="This is a description."></nz-step>
+</nz-steps>
+
+<br>
+<br>
+
+<nz-checkbox-group [(ngModel)]="checkOptionsOne" (ngModelChange)="log(checkOptionsOne)"></nz-checkbox-group>
+<br/>
+<br/>
+<nz-checkbox-group [(ngModel)]="checkOptionsTwo" (ngModelChange)="log(checkOptionsTwo)"></nz-checkbox-group>
+<br/>
+<br/>
+<nz-checkbox-group [(ngModel)]="checkOptionsThree" (ngModelChange)="log(checkOptionsThree)"></nz-checkbox-group>
+
+
+<br/>
+<br/>
+<br/>
+<nz-tree
+  [nzData]="nodes"
+  nzCheckable
+  nzMultiple
+  [nzCheckedKeys]="defaultCheckedKeys"
+  [nzExpandedKeys]="defaultExpandedKeys"
+  [nzSelectedKeys]="defaultSelectedKeys"
+  (nzClick)="nzEvent($event)"
+  (nzExpandChange)="nzEvent($event)"
+  (nzCheckBoxChange)="nzEvent($event)"
+></nz-tree>

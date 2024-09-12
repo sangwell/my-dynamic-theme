@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {ThemeService} from './services/theme-service/theme.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   isCollapsed = false;
+
+  constructor(private themeService: ThemeService) {
+  }
+
+  toggleTheme(theme: string): void {
+    this.themeService.toggleTheme(theme).then();
+  }
 }
