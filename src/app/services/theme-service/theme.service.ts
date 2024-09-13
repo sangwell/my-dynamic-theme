@@ -1,8 +1,9 @@
 import {Injectable} from '@angular/core';
 
-enum ThemeType {
-  dark = 'dark',
+export enum ThemeType {
   default = 'default',
+  dark = 'dark',
+  green = 'green'
 }
 
 @Injectable({
@@ -14,7 +15,7 @@ export class ThemeService {
   constructor() {
   }
 
-  private reverseTheme(theme: string): ThemeType {
+  private reverseTheme(theme: ThemeType): ThemeType {
     return theme === ThemeType.dark ? ThemeType.default : ThemeType.dark;
   }
 
@@ -38,19 +39,15 @@ export class ThemeService {
     });
   }
 
-  public loadTheme(theme: string): Promise<Event> {
-    /*const theme = this.currentTheme;
-    if (firstLoad) {
-      document.documentElement.classList.add(theme);
-    }*/
+  public loadTheme(theme: ThemeType, firstLoad = false): Promise<Event> {
     return new Promise<Event>((resolve, reject) => {
       this.loadCss(`${theme}.css`, theme).then(
         (e) => {
-          /*if (!firstLoad) {
-            document.documentElement.classList.add(theme);
-          }*/
           document.documentElement.classList.add(theme);
-          this.removeUnusedTheme(this.reverseTheme(theme));
+          if (!firstLoad) {
+            this.removeUnusedTheme(this.currentTheme);
+          }
+          this.currentTheme = theme;
           resolve(e);
         },
         (e) => reject(e)
@@ -58,8 +55,7 @@ export class ThemeService {
     });
   }
 
-  public toggleTheme(theme: string): Promise<Event> {
-    // this.currentTheme = this.reverseTheme(this.currentTheme);
+  public toggleTheme(theme: ThemeType): Promise<Event> {
     return this.loadTheme(theme);
   }
 }

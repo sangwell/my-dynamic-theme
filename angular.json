@@ -31,8 +31,26 @@
             ],
             "styles": [
               "src/theme.less",
-              "src/styles.less"
+              "src/styles.less",
+              {
+                "input": "src/styles/default.less",
+                "bundleName": "default",
+                "inject": false
+              },
+              {
+                "input": "src/styles/dark.less",
+                "bundleName": "dark",
+                "inject": false
+              },
+              {
+                "input": "src/styles/green.less",
+                "bundleName": "green",
+                "inject": false
+              }
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": ["src/styles/themes"]
+            },
             "scripts": []
           },
           "configurations": {

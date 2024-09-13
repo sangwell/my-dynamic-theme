@@ -13,8 +13,11 @@
   <nz-step nzTitle="Waiting" nzDescription="This is a description."></nz-step>
 </nz-steps>
 
-<br>
-<br>
+<br/>
+<div class="custom-div">
+  Custom Div
+</div>
+<br/>
 
 <nz-checkbox-group [(ngModel)]="checkOptionsOne" (ngModelChange)="log(checkOptionsOne)"></nz-checkbox-group>
 <br/>
@@ -39,3 +42,5 @@
   (nzExpandChange)="nzEvent($event)"
   (nzCheckBoxChange)="nzEvent($event)"
 ></nz-tree>
+
+

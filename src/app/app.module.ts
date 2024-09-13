@@ -14,6 +14,7 @@ import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import {ThemeServiceModule} from './services/theme-service/theme.service.module';
+import { AppInitializerProvider } from './app-initializer.service';
 
 registerLocaleData(zh);
 
@@ -34,6 +35,7 @@ registerLocaleData(zh);
     ThemeServiceModule
   ],
   providers: [
+    AppInitializerProvider,
     { provide: NZ_I18N, useValue: zh_CN }
   ],
   bootstrap: [AppComponent]

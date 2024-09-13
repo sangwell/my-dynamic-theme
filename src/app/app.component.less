@@ -1,3 +1,26 @@
+@import "mixin";
+
+.themeMixin({
+  :host {
+    .sidebar-logo{
+      background: @sidebar-logo-bg;
+    }
+
+    .inner-content {
+      background: @inner-content-bg;
+    }
+
+    .app-header {
+      background: @app-header-bg;
+    }
+
+    .ant-layout {
+      background: @app-layout-bg;
+    }
+  }
+});
+
+
 :host {
   display: flex;
   text-rendering: optimizeLegibility;
@@ -32,7 +55,7 @@ nz-select {
 }
 
 .default {
-  span{
+  span {
     display: block;
     position: absolute;
     top: 0;
@@ -48,7 +71,7 @@ nz-select {
   position: relative;
   z-index: 10;
   min-height: 100vh;
-  box-shadow: 2px 0 6px rgba(0,21,41,.35);
+  box-shadow: 2px 0 6px rgba(0, 21, 41, .35);
 }
 
 .header-trigger {
@@ -56,7 +79,7 @@ nz-select {
   padding: 20px 24px;
   font-size: 20px;
   cursor: pointer;
-  transition: all .3s,padding 0s;
+  transition: all .3s, padding 0s;
 }
 
 .trigger:hover {
@@ -69,7 +92,6 @@ nz-select {
   padding-left: 24px;
   overflow: hidden;
   line-height: 64px;
-  background: #001529;
   transition: all .3s;
 }
 
@@ -86,7 +108,7 @@ nz-select {
   color: #fff;
   font-weight: 600;
   font-size: 14px;
-  font-family: Avenir,Helvetica Neue,Arial,Helvetica,sans-serif;
+  font-family: Avenir, Helvetica Neue, Arial, Helvetica, sans-serif;
   vertical-align: middle;
 }
 
@@ -101,7 +123,7 @@ nz-header {
   height: 64px;
   padding: 0;
   background: #fff;
-  box-shadow: 0 1px 4px rgba(0,21,41,.08);
+  box-shadow: 0 1px 4px rgba(0, 21, 41, .08);
 }
 
 nz-content {

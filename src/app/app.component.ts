@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {ThemeService} from './services/theme-service/theme.service';
+import {ThemeService,ThemeType} from './services/theme-service/theme.service';
 
 @Component({
   selector: 'app-root',
@@ -12,12 +12,8 @@ export class AppComponent {
   constructor(private themeService: ThemeService) {
   }
 
-  toggleTheme(theme: string): void {
+
+  onThemeChange(theme: ThemeType) {
     this.themeService.toggleTheme(theme).then();
-  }
-
-
-  onThemeChange(theme: string) {
-    console.log('theme:', theme);
   }
 }
