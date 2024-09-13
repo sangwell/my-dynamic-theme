@@ -15,7 +15,6 @@ import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import {ThemeServiceModule} from './services/theme-service/theme.service.module';
 import { AppInitializerProvider } from './app-initializer.service';
-
 registerLocaleData(zh);
 
 @NgModule({
