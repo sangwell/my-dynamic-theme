@@ -46,7 +46,7 @@ const ngZorroConfig: NzConfig = {
   providers: [
     AppInitializerProvider,
     { provide: NZ_I18N, useValue: zh_CN },
-    { provide: NZ_CONFIG, useValue:  ngZorroConfig  }
+    // { provide: NZ_CONFIG, useValue:  ngZorroConfig  }
   ],
   bootstrap: [AppComponent]
 })

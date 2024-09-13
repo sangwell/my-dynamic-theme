@@ -4,8 +4,8 @@ import {ThemeService, ThemeType} from './services/theme-service/theme.service';
 export const AppInitializerProvider = {
   provide: APP_INITIALIZER,
   useFactory: (themeService: ThemeService) => () => {
-    // return themeService.loadTheme(ThemeType.default, true);
-    return;
+    return themeService.loadTheme(ThemeType.default, true);
+    // return;
   },
   deps: [ThemeService],
   multi: true,

@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {ThemeService, ThemeType} from './services/theme-service/theme.service';
+import { NzConfigService } from 'ng-zorro-antd/core/config';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,8 @@ export class AppComponent {
 
   leftColor: string = '';
 
-  constructor(private themeService: ThemeService) {
+  constructor(private themeService: ThemeService,
+              private nzConfigService: NzConfigService) {
   }
 
 
@@ -21,5 +23,6 @@ export class AppComponent {
 
   colorChange(color: string) {
     console.log('color', color);
+    this.nzConfigService.set('theme', { primaryColor: color })
   }
 }
