@@ -15,7 +15,16 @@ import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import {ThemeServiceModule} from './services/theme-service/theme.service.module';
 import { AppInitializerProvider } from './app-initializer.service';
+import { NgxColorsModule } from 'ngx-colors';
+import { NzConfig, NZ_CONFIG } from 'ng-zorro-antd/core/config';
 registerLocaleData(zh);
+
+const ngZorroConfig: NzConfig = {
+  // 注意组件名称没有 nz 前缀
+  theme: {
+    primaryColor: 'red'
+  }
+};
 
 @NgModule({
   declarations: [
@@ -31,11 +40,13 @@ registerLocaleData(zh);
     NzLayoutModule,
     NzMenuModule,
     NzSelectModule,
-    ThemeServiceModule
+    ThemeServiceModule,
+    NgxColorsModule
   ],
   providers: [
     AppInitializerProvider,
-    { provide: NZ_I18N, useValue: zh_CN }
+    { provide: NZ_I18N, useValue: zh_CN },
+    { provide: NZ_CONFIG, useValue:  ngZorroConfig  }
   ],
   bootstrap: [AppComponent]
 })

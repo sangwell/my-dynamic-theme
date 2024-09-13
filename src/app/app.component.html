@@ -39,10 +39,14 @@
       <div class="app-header">
         <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
             <span class="trigger"
-               nz-icon
-               [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+                  nz-icon
+                  [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
             ></span>
         </span>
+
+        <div style="float: right;margin: 15px 15px 0 0;">
+          <ngx-colors ngx-colors-trigger [(ngModel)]="leftColor" (ngModelChange)="colorChange($event)"></ngx-colors>
+        </div>
 
         <div style="float: right;padding-right: 20px">
           主题：
@@ -52,6 +56,7 @@
             <nz-option nzValue="green" nzLabel="Green"></nz-option>
           </nz-select>
         </div>
+
       </div>
     </nz-header>
     <nz-content>
